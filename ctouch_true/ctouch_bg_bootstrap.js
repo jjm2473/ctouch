@@ -17,6 +17,8 @@ chrome.webRequest.onResponseStarted.addListener(
 		var inject_tag=function(id,script){
 			var s="\
 (function(){\
+if(null == document.body)\
+return;\
 var s=document.createElement('script');\
 var innerText=('innerText' in s) ? 'innerText' : 'textContent';\
 s.type='text/javascript';\

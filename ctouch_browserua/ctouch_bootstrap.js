@@ -26,6 +26,8 @@ var enable_imitation=true;
 var generate_touch=true;
 var install_createtouch=false;
 var inject_tag=function(id,script){
+	if(null == document.body)
+		return;
 	var s=document.createElement('script');
 	var innerText=('innerText' in s) ? 'innerText' : 'textContent';
 	s.type='text/javascript';
